@@ -3,33 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mi sitio personal</title>
+    <title>Franco Canestrari - Intereses</title>
+    
+    <style>
+        /* 1. TIPOGRAFÍA Y VARIABLES GLOBALES */
+        :root {
+            --color-fondo: #f4f7f6;
+            --color-texto: #333333;
+            --color-primario: #2c3e50;
+            --color-secundario: #3498db;
+            --color-blanco: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* 2. DISEÑO DEL HEADER Y NAVEGACIÓN */
+        header {
+            background-color: var(--color-primario);
+            color: var(--color-blanco);
+            text-align: center;
+            padding: 40px 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        nav ul.menu-navegacion {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        nav a {
+            color: var(--color-blanco);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: var(--color-secundario);
+        }
+
+        /* 3. DISEÑO DEL MAIN Y LISTA (Estilo Tarjetas) */
+        main {
+            flex-grow: 1;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        ul.lista-intereses {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul.lista-intereses li {
+            background-color: var(--color-blanco);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            text-align: left;
+            transition: transform 0.2s ease;
+        }
+
+        ul.lista-intereses li:hover {
+            transform: translateY(-3px);
+        }
+
+        ul.lista-intereses h3 {
+            color: var(--color-primario);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--color-fondo);
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        ul.lista-intereses p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .periodo-laboral {
+            margin-bottom: 20px;
+            padding-left: 10px;
+            border-left: 3px solid var(--color-secundario);
+        }
+
+        .periodo-laboral:last-child {
+            margin-bottom: 0;
+        }
+
+        .empresa {
+            font-weight: bold;
+            color: var(--color-primario);
+            display: block;
+        }
+
+        .fecha {
+            font-size: 0.95rem;
+            color: var(--color-secundario);
+            font-weight: bold;
+        }
+
+        /* Estilo para la imagen de la infografía */
+        .infografia-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin: 20px auto 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        ul.lista-intereses p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        /* 4. DISEÑO DEL FOOTER */
+        footer {
+            background-color: var(--color-primario);
+            color: var(--color-blanco);
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+            font-size: 0.9rem;
+        }
+
+        /* 5. RESPONSIVE DESIGN */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            nav ul.menu-navegacion {
+                flex-direction: column;
+                gap: 10px;
+            }
+            main {
+                margin: 20px auto;
+            }
+            ul.lista-intereses li {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
+
+    <!-- CABECERA -->
     <header>
-        <h1>mi primer sitio</h1>
+        <h1>Franco Canestrari</h1>
         <nav>
-            <ul>
-                <li>
-                    <a href="inicio.html">Inicio</a>
-                </li>
-                <li>
-                    <a href="intereses.html">Intereses</a>
-                </li>
-                <li>
-                    <a href="contacto.html">Ir a Contacto</a>
-                </li>
+            <ul class="menu-navegacion">
+                <li><a href="index.html">Competencia</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="intereses.html">Intereses</a></li>
             </ul>
         </nav>
     </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
     <main>
-        <p>Mi nombre es Franco y actualmente me desempeño como pasante en el área de Recursos Humanos, mientras curso el tercer año de la Licenciatura en RRHH.</p>
-        <p>Me encuentro en un proceso de desarrollo profesional, enfocado en adquirir experiencia y fortalecer mis habilidades dentro del área. Me interesa especialmente la gestión del talento, la selección de personal y el desarrollo organizacional.</p>
-        <p>A futuro, mi objetivo es crecer profesionalmente dentro de una organización y alcanzar posiciones de mayor responsabilidad, donde pueda liderar equipos y aportar valor estratégico.</p>
-        <img src="infografia.png" alt="mi infografia">
+        <ul class="lista-intereses">
+            
+            <li>
+                <h3>💼 Perfil Profesional</h3>
+                <p>Soy estudiante avanzado de la Licenciatura en Recursos Humanos en UADE, con un gran enfoque en la administración de personal y la gestión del talento. Me destaco por mi proactividad, mi capacidad analítica y mi interés constante en seguir incorporando nuevas herramientas para aportar valor estratégico a la organización.</p>
+            </li>
+
+            <li>
+                <h3>🏢 Experiencia Laboral</h3>
+                
+                <div class="periodo-laboral">
+                    <span class="empresa">Mazalosa</span>
+                    <span class="fecha">Enero 2026 - Actualidad</span>
+                    <p>Desempeño funciones en el área de Administración de Personal y Payroll, gestionando procesos críticos de liquidación y soporte administrativo integral.</p>
+                </div>
+
+                <div class="periodo-laboral">
+                    <span class="empresa">Globant</span>
+                    <span class="fecha">Diciembre 2024 - Junio 2025</span>
+                    <p>Experiencia en el área de Administración de Personal, brindando soporte en la gestión de legajos y procesos administrativos del sector.</p>
+                </div>
+            </li>
+
+            <li>
+                <h3>📚 Formación Académica</h3>
+                <p><strong style="color: var(--color-secundario);">Licenciatura en Recursos Humanos - UADE (3er Año)</strong></p>
+                <p>Actualmente curso el tercer año de la carrera en la Universidad Argentina de la Empresa (UADE), donde he adquirido conocimientos sólidos en comportamiento organizacional, derecho laboral y compensaciones.</p>
+                <p>Como complemento estratégico a mi formación profesional, me encuentro realizando un <strong>Minor en Análisis de Datos</strong>, orientado a fortalecer mi perfil analítico para la toma de decisiones basadas en métricas dentro del área de capital humano.</p>
+            </li>
+
+            <li style="text-align: center;">
+                <h3>📊 Infografía Profesional</h3>
+                <p>Resumen visual de mi trayectoria y formación.</p>
+                <img src="infografia.png" alt="Infografía de Franco Canestrari" class="infografia-img">
+            </li>
+
+        </ul>
     </main>
+
+    <!-- FOOTER -->
     <footer>
-        <p>© 2026 Franco Canestrari | Pasante de Recursos Humanos</p>
+        <p>Franco Canestrari - Pasante de Recursos Humanos Hard</p>
     </footer>
+
 </body>
 </html>

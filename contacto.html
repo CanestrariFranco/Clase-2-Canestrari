@@ -1,12 +1,260 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
+    <title>Contacto - Mi Sitio</title>
+    
+    <style>
+        /* 1. TIPOGRAFÍA Y VARIABLES GLOBALES */
+        :root {
+            --color-fondo: #f4f7f6;
+            --color-texto: #333333;
+            --color-primario: #2c3e50;
+            --color-secundario: #3498db;
+            --color-blanco: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* 2. DISEÑO DEL HEADER */
+        header {
+            background-color: var(--color-primario);
+            color: var(--color-blanco);
+            text-align: center;
+            padding: 40px 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* Diseño para el menú de navegación */
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        nav a {
+            color: var(--color-blanco);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: var(--color-secundario);
+        }
+
+        /* 3. DISEÑO DEL MAIN */
+        main {
+            flex-grow: 1;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        .seccion-tarjeta {
+            background-color: var(--color-blanco);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .seccion-tarjeta h2 {
+            color: var(--color-primario);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--color-fondo);
+            padding-bottom: 10px;
+        }
+
+        /* 4. NUEVOS ESTILOS PARA ESTADO, CV Y TARJETAS DE REDES */
+        .estado-profesional {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-color: #e8f4f8; /* Un azul muy clarito */
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 5px solid var(--color-secundario);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .btn-cv {
+            display: inline-block;
+            background-color: var(--color-primario);
+            color: var(--color-blanco);
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border-radius: 50px; /* Bordes bien redondeados */
+            transition: background-color 0.3s, transform 0.2s;
+            margin-top: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn-cv:hover {
+            background-color: #1a252f;
+            transform: translateY(-2px); /* Pequeño salto al pasar el mouse */
+        }
+
+        .contenedor-redes {
+            display: grid; /* Usamos Grid para que las tarjetas se acomoden solas */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .tarjeta-red {
+            background-color: var(--color-fondo);
+            padding: 25px 20px;
+            border-radius: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--color-primario);
+            font-weight: bold;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .tarjeta-red span {
+            font-size: 2.5rem; /* Tamaño grande para los emojis */
+        }
+
+        .tarjeta-red:hover {
+            border-color: var(--color-secundario);
+            background-color: #ffffff;
+            transform: translateY(-5px); /* Efecto de elevación */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        /* 5. DISEÑO DEL FOOTER */
+        footer {
+            background-color: var(--color-primario);
+            color: var(--color-blanco);
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+            font-size: 0.9rem;
+        }
+
+        /* 6. RESPONSIVE DESIGN */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+            main {
+                margin: 20px auto;
+            }
+            .seccion-tarjeta {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <H2>contacto</H2>
-    <a href="mailto:sushitrueno@gmail.com">Mail</a>
+
+    <!-- CABECERA PRINCIPAL -->
+    <header>
+        <h1>Contacto - Franco</h1>
+        <nav>
+            <ul>
+                <!-- Nota: cambié el enlace de inicio a index.html para que conecte con el archivo principal -->
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="intereses.html">Intereses</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+        
+        <!-- SECCIÓN 1: Estado y Ubicación (Opción 3) -->
+        <section class="seccion-tarjeta">
+            <h2>Mi Situación Actual</h2>
+            <div class="estado-profesional">
+                <p><strong>📍 Ubicación:</strong> Buenos Aires, Argentina</p>
+                <p><strong>💼 Perfil:</strong> Estudiante de Recursos Humanos y Pasante. Orientado y desarrollándome en el área de RRHH Hard.</p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: Descargar CV (Opción 2) -->
+        <section class="seccion-tarjeta" style="text-align: center;">
+            <h2>Mi Trayectoria</h2>
+            <p>Si te interesa conocer más sobre mi formación académica y mi experiencia laboral en el área de RRHH, puedes revisar mi currículum.</p>
+            
+            <!-- IMPORTANTE: El atributo "download" le dice al navegador que descargue el archivo. -->
+            <a href="CV_Franco.pdf" download class="btn-cv">📄 Descargar Currículum (PDF)</a>
+        </section>
+
+        <!-- SECCIÓN 3: Tarjetas de Contacto (Opción 4) -->
+        <section class="seccion-tarjeta">
+            <h2>Hablemos</h2>
+            <p>Elige el medio que prefieras para ponerte en contacto conmigo:</p>
+            
+            <div class="contenedor-redes">
+                <!-- Tarjeta de Email -->
+                <a href="mailto:franocanestrari@gmail.com" class="tarjeta-red">
+                    <span>📧</span>
+                    Enviar Correo
+                </a>
+                
+                <!-- Tarjeta de Teléfono -->
+                <a href="tel:+5491140647742" class="tarjeta-red">
+                    <span>📱</span>
+                    Llamar / WhatsApp
+                </a>
+                
+                <!-- Tarjeta de LinkedIn -->
+                <a href="https://www.linkedin.com/in/franco-canenstrari/?lipi=urn%3Ali%3Apage%3Ad_flagship3_404%3BqFBrrPu7RUepLyQa3j6qTw%3D%3D" target="_blank" class="tarjeta-red">
+                    <span>💼</span>
+                    Ver LinkedIn
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Franco Canestrari - Pasante de Recursos Humanos Hard</p>
+    </footer>
+
 </body>
 </html>

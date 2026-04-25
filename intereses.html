@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intereses - Mi Sitio</title>
+    <title>Intereses - Franco Canestrari</title>
     
     <style>
-        /* 1. TIPOGRAFÍA Y VARIABLES GLOBALES */
+        /* 1. TIPOGRAFÍA Y VARIABLES GLOBALES (Igual a index y contacto) */
         :root {
             --color-fondo: #f4f7f6;
             --color-texto: #333333;
@@ -31,7 +31,7 @@
             min-height: 100vh;
         }
 
-        /* 2. DISEÑO DEL HEADER */
+        /* 2. DISEÑO DEL HEADER Y NAVEGACIÓN */
         header {
             background-color: var(--color-primario);
             color: var(--color-blanco);
@@ -45,7 +45,6 @@
             margin-bottom: 10px;
         }
 
-        /* Diseño para el menú de navegación */
         nav ul.menu-navegacion {
             list-style-type: none;
             display: flex;
@@ -67,7 +66,7 @@
             background-color: var(--color-secundario);
         }
 
-        /* 3. DISEÑO DEL MAIN Y LISTA DE INTERESES */
+        /* 3. DISEÑO DEL MAIN Y LISTA DE INTERESES (Estilo Tarjetas) */
         main {
             flex-grow: 1;
             max-width: 900px;
@@ -76,13 +75,11 @@
             width: 100%;
         }
 
-        /* Estilos para la lista que contiene los intereses */
         ul.lista-intereses {
-            list-style-type: none; /* Quitamos los puntos clásicos de la lista */
+            list-style-type: none; /* Quita los puntos de la lista */
             padding: 0;
         }
 
-        /* Convertimos los <li> en tarjetas visuales */
         ul.lista-intereses li {
             background-color: var(--color-blanco);
             padding: 30px;
@@ -90,13 +87,13 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             margin-bottom: 30px;
             text-align: left;
+            transition: transform 0.2s ease;
         }
 
-        ul.lista-intereses li:last-child {
-            margin-bottom: 0;
+        ul.lista-intereses li:hover {
+            transform: translateY(-3px); /* Pequeño efecto de elevación al pasar el mouse */
         }
 
-        /* Estilos para los <h3> dentro de los <li> */
         ul.lista-intereses h3 {
             color: var(--color-primario);
             margin-bottom: 15px;
@@ -111,6 +108,7 @@
         ul.lista-intereses p {
             margin-bottom: 15px;
             font-size: 1.1rem;
+            text-align: justify;
         }
 
         ul.lista-intereses p:last-of-type {
@@ -147,11 +145,10 @@
 </head>
 <body>
 
-    <!-- CABECERA PRINCIPAL -->
+    <!-- CABECERA -->
     <header>
         <h1>Mis Intereses</h1>
         <nav>
-            <!-- Le puse una clase a este ul para que no se confunda con el ul del main en CSS -->
             <ul class="menu-navegacion">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="intereses.html">Intereses</a></li>
@@ -162,26 +159,27 @@
 
     <!-- CONTENIDO PRINCIPAL -->
     <main>
-        
-        <!-- Aquí está tu estructura original restaurada: un ul con varios li -->
         <ul class="lista-intereses">
             
+            <!-- TARJETA 1 -->
             <li>
-                <h3>⚽ Deportes:</h3>
-                <p>Considero el deporte una parte fundamental de mi vida, no solo para mantenerme saludable y liberar el estrés del día a día, sino también como una escuela de valores. A través del deporte, he aprendido sobre disciplina, constancia y el verdadero significado del trabajo en equipo.</p>
-                <p>Practico principalmente fútbol y vóley. Estas actividades me permiten mejorar mi rendimiento físico, pero también son fundamentales para desarrollar mis habilidades sociales y de liderazgo. Entiendo que competencias como la comunicación bajo presión, la empatía y la resolución de conflictos dentro de la cancha son directamente transferibles a mi futura profesión en la gestión de equipos de trabajo.</p>
+                <h3>⚽ Deportes</h3>
+                <p>Considero el deporte una parte fundamental de mi vida, no solo para mantenerme saludable físicamente, sino también para desarrollar disciplina, constancia y una mentalidad orientada a objetivos. Practico principalmente fútbol y vóley, dos disciplinas que exigen un alto nivel de coordinación y estrategia en conjunto.</p>
+                <p>Estas actividades me permiten mejorar mi rendimiento, pero sobre todo, perfeccionan mis habilidades sociales dentro de un grupo. En la cancha he aprendido a comunicarme bajo presión, a entender los roles de cada integrante y a liderar desde la motivación. Considero que estas dinámicas deportivas son un reflejo exacto del trabajo en equipo dentro del ámbito empresarial y de los Recursos Humanos.</p>
             </li>
 
+            <!-- TARJETA 2 -->
             <li>
-                <h3>💻 Tecnología:</h3>
-                <p>Tengo un fuerte interés por la tecnología y cómo su impacto está transformando la vida cotidiana, especialmente dentro del ecosistema empresarial y las organizaciones.</p>
-                <p>Me gusta mantenerme actualizado sobre nuevas herramientas digitales, sistemas de gestión y tendencias tecnológicas. Como profesional orientado a RRHH Hard, me fascina cómo la automatización de procesos, el análisis de datos (People Analytics) y los software de liquidación y control pueden optimizar el tiempo, reducir errores y mejorar significativamente la experiencia tanto de los administradores como de los colaboradores.</p>
+                <h3>💻 Tecnología</h3>
+                <p>Tengo un fuerte interés por la tecnología y su impacto en la vida cotidiana, así como en la transformación de las organizaciones modernas. Me gusta mantenerme constantemente actualizado sobre nuevas herramientas digitales, software emergente y las últimas tendencias tecnológicas del mercado.</p>
+                <p>Específicamente, me apasiona cómo la tecnología puede aplicarse a la gestión y optimización de procesos en el área de RRHH Hard. El uso de sistemas de información (HRIS), el análisis de datos para la toma de decisiones (People Analytics) y la automatización de nóminas son áreas que captan mi atención. Cursar Diseño y Desarrollo Web es un paso estratégico para entender este mundo digital desde su código fuente.</p>
             </li>
 
+            <!-- TARJETA 3 -->
             <li>
-                <h3>🦑 Club Atlético Platense:</h3>
-                <p>Soy fanático del Club Atlético Platense, con un fuerte sentido de pertenencia tanto por los colores de la institución como por el barrio y su comunidad.</p>
-                <p>El fútbol representa para mí una pasión que va mucho más allá del simple deporte: es un espacio de identificación, disfrute y conexión con mi entorno. Seguir al "Calamar" es mi cable a tierra los fines de semana y me ha enseñado sobre lealtad, perseverancia y la importancia de acompañar un proyecto tanto en los buenos momentos como en la adversidad.</p>
+                <h3>🦑 Club Atlético Platense</h3>
+                <p>Soy un apasionado fanático del Club Atlético Platense, lo cual me genera un profundo y genuino sentido de pertenencia tanto por la institución como por mi comunidad y el barrio. Ir a la cancha es un ritual que comparto con familiares y amigos, convirtiéndose en un espacio invaluable de encuentro social.</p>
+                <p>El fútbol, y seguir a Platense en particular, representa para mí una pasión que va mucho más allá de los 90 minutos de un partido. Es una escuela de resiliencia y fidelidad. Me ha enseñado la importancia de acompañar un proyecto a largo plazo, de saber sobreponerse a la adversidad y de celebrar los logros colectivos, valores que aplico en todos los aspectos de mi vida.</p>
             </li>
 
         </ul>

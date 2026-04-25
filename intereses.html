@@ -6,7 +6,7 @@
     <title>Intereses - Mi Sitio</title>
     
     <style>
-        /* 1. TIPOGRAFÍA Y VARIABLES GLOBALES (Manteniendo la estética del sitio) */
+        /* 1. TIPOGRAFÍA Y VARIABLES GLOBALES */
         :root {
             --color-fondo: #f4f7f6;
             --color-texto: #333333;
@@ -46,7 +46,7 @@
         }
 
         /* Diseño para el menú de navegación */
-        nav ul {
+        nav ul.menu-navegacion {
             list-style-type: none;
             display: flex;
             justify-content: center;
@@ -67,7 +67,7 @@
             background-color: var(--color-secundario);
         }
 
-        /* 3. DISEÑO DEL MAIN */
+        /* 3. DISEÑO DEL MAIN Y LISTA DE INTERESES */
         main {
             flex-grow: 1;
             max-width: 900px;
@@ -76,7 +76,14 @@
             width: 100%;
         }
 
-        .seccion-tarjeta {
+        /* Estilos para la lista que contiene los intereses */
+        ul.lista-intereses {
+            list-style-type: none; /* Quitamos los puntos clásicos de la lista */
+            padding: 0;
+        }
+
+        /* Convertimos los <li> en tarjetas visuales */
+        ul.lista-intereses li {
             background-color: var(--color-blanco);
             padding: 30px;
             border-radius: 10px;
@@ -85,11 +92,12 @@
             text-align: left;
         }
 
-        .seccion-tarjeta:last-child {
+        ul.lista-intereses li:last-child {
             margin-bottom: 0;
         }
 
-        .seccion-tarjeta h2 {
+        /* Estilos para los <h3> dentro de los <li> */
+        ul.lista-intereses h3 {
             color: var(--color-primario);
             margin-bottom: 15px;
             font-size: 1.8rem;
@@ -100,12 +108,12 @@
             gap: 10px;
         }
 
-        .seccion-tarjeta p {
+        ul.lista-intereses p {
             margin-bottom: 15px;
             font-size: 1.1rem;
         }
 
-        .seccion-tarjeta p:last-of-type {
+        ul.lista-intereses p:last-of-type {
             margin-bottom: 0;
         }
 
@@ -124,14 +132,14 @@
             header h1 {
                 font-size: 2rem;
             }
-            nav ul {
+            nav ul.menu-navegacion {
                 flex-direction: column;
                 gap: 10px;
             }
             main {
                 margin: 20px auto;
             }
-            .seccion-tarjeta {
+            ul.lista-intereses li {
                 padding: 20px;
             }
         }
@@ -143,7 +151,8 @@
     <header>
         <h1>Mis Intereses</h1>
         <nav>
-            <ul>
+            <!-- Le puse una clase a este ul para que no se confunda con el ul del main en CSS -->
+            <ul class="menu-navegacion">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="intereses.html">Intereses</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
@@ -154,27 +163,28 @@
     <!-- CONTENIDO PRINCIPAL -->
     <main>
         
-        <!-- SECCIÓN 1: Deportes -->
-        <section class="seccion-tarjeta">
-            <h2>⚽ Deportes</h2>
-            <p>Considero el deporte una parte fundamental de mi vida, no solo para mantenerme saludable y liberar el estrés del día a día, sino también como una escuela de valores. A través del deporte, he aprendido sobre disciplina, constancia y el verdadero significado del trabajo en equipo.</p>
-            <p>Practico principalmente fútbol y vóley. Estas actividades me permiten mejorar mi rendimiento físico, pero también son fundamentales para desarrollar mis habilidades sociales y de liderazgo. Entiendo que competencias como la comunicación bajo presión, la empatía y la resolución de conflictos dentro de la cancha son directamente transferibles a mi futura profesión en la gestión de equipos de trabajo.</p>
-        </section>
+        <!-- Aquí está tu estructura original restaurada: un ul con varios li -->
+        <ul class="lista-intereses">
+            
+            <li>
+                <h3>⚽ Deportes:</h3>
+                <p>Considero el deporte una parte fundamental de mi vida, no solo para mantenerme saludable y liberar el estrés del día a día, sino también como una escuela de valores. A través del deporte, he aprendido sobre disciplina, constancia y el verdadero significado del trabajo en equipo.</p>
+                <p>Practico principalmente fútbol y vóley. Estas actividades me permiten mejorar mi rendimiento físico, pero también son fundamentales para desarrollar mis habilidades sociales y de liderazgo. Entiendo que competencias como la comunicación bajo presión, la empatía y la resolución de conflictos dentro de la cancha son directamente transferibles a mi futura profesión en la gestión de equipos de trabajo.</p>
+            </li>
 
-        <!-- SECCIÓN 2: Tecnología -->
-        <section class="seccion-tarjeta">
-            <h2>💻 Tecnología</h2>
-            <p>Tengo un fuerte interés por la tecnología y cómo su impacto está transformando la vida cotidiana, especialmente dentro del ecosistema empresarial y las organizaciones.</p>
-            <p>Me gusta mantenerme actualizado sobre nuevas herramientas digitales, sistemas de gestión y tendencias tecnológicas. Como profesional orientado a RRHH Hard, me fascina cómo la automatización de procesos, el análisis de datos (People Analytics) y los software de liquidación y control pueden optimizar el tiempo, reducir errores y mejorar significativamente la experiencia tanto de los administradores como de los colaboradores.</p>
-        </section>
+            <li>
+                <h3>💻 Tecnología:</h3>
+                <p>Tengo un fuerte interés por la tecnología y cómo su impacto está transformando la vida cotidiana, especialmente dentro del ecosistema empresarial y las organizaciones.</p>
+                <p>Me gusta mantenerme actualizado sobre nuevas herramientas digitales, sistemas de gestión y tendencias tecnológicas. Como profesional orientado a RRHH Hard, me fascina cómo la automatización de procesos, el análisis de datos (People Analytics) y los software de liquidación y control pueden optimizar el tiempo, reducir errores y mejorar significativamente la experiencia tanto de los administradores como de los colaboradores.</p>
+            </li>
 
-        <!-- SECCIÓN 3: Platense -->
-        <section class="seccion-tarjeta">
-            <h2>🦑 Club Atlético Platense</h2>
-            <p>Soy fanático del Club Atlético Platense, con un fuerte sentido de pertenencia tanto por los colores de la institución como por el barrio y su comunidad.</p>
-            <p>El fútbol representa para mí una pasión que va mucho más allá del simple deporte: es un espacio de identificación, disfrute y conexión con mi entorno. Seguir al "Calamar" es mi cable a tierra los fines de semana y me ha enseñado sobre lealtad, perseverancia y la importancia de acompañar un proyecto tanto en los buenos momentos como en la adversidad.</p>
-        </section>
+            <li>
+                <h3>🦑 Club Atlético Platense:</h3>
+                <p>Soy fanático del Club Atlético Platense, con un fuerte sentido de pertenencia tanto por los colores de la institución como por el barrio y su comunidad.</p>
+                <p>El fútbol representa para mí una pasión que va mucho más allá del simple deporte: es un espacio de identificación, disfrute y conexión con mi entorno. Seguir al "Calamar" es mi cable a tierra los fines de semana y me ha enseñado sobre lealtad, perseverancia y la importancia de acompañar un proyecto tanto en los buenos momentos como en la adversidad.</p>
+            </li>
 
+        </ul>
     </main>
 
     <!-- FOOTER -->

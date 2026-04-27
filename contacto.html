@@ -41,19 +41,41 @@
             <h2>Hablemos</h2>
             <p>Elige el medio que prefieras para ponerte en contacto conmigo:</p>
             
-            <div class="contenedor-redes">
-                <a href="mailto:franocanestrari@gmail.com" class="tarjeta-red">
+           <div class="contenedor-redes">
+                <a href="#" id="btn-mail" onclick="event.preventDefault(); mostrarContacto('mail');" class="tarjeta-red">
+                    <span>📧</span>
                     Enviar Correo
                 </a>
                 
-                <a href="#" onclick="event.preventDefault(); this.innerHTML='1140647742<br><span style=\'font-size: 0.9rem; font-weight: normal; margin-top: 5px; display: block;\'>Mandame un WhatsApp</span>';" class="tarjeta-red">
+                <a href="#" id="btn-wpp" onclick="event.preventDefault(); mostrarContacto('wpp');" class="tarjeta-red">
+                    <span>📱</span>
                     Llamar / WhatsApp
                 </a>
                 
-                <a href="https://www.linkedin.com/in/franco-canenstrari/" target="_blank" class="tarjeta-red">
+                <a href="#" id="btn-in" onclick="event.preventDefault(); mostrarContacto('in');" class="tarjeta-red">
+                    <span>💼</span>
                     Ver LinkedIn
                 </a>
             </div>
+
+            <script>
+                // Esta función se encarga de que solo se vea una opción a la vez
+                function mostrarContacto(tipo) {
+                    // 1. Ocultar todos y volver al texto original
+                    document.getElementById('btn-mail').innerHTML = '<span>📧</span> Enviar Correo';
+                    document.getElementById('btn-wpp').innerHTML = '<span>📱</span> Llamar / WhatsApp';
+                    document.getElementById('btn-in').innerHTML = '<span>💼</span> Ver LinkedIn';
+
+                    // 2. Mostrar la información del botón que el usuario tocó
+                    if (tipo === 'mail') {
+                        document.getElementById('btn-mail').innerHTML = '<span>📧</span> <span style="font-size: 1rem; word-break: break-all;">franocanestrari@gmail.com</span> <span style="font-size: 0.85rem; font-weight: normal;">(Correo)</span>';
+                    } else if (tipo === 'wpp') {
+                        document.getElementById('btn-wpp').innerHTML = '<span>📱</span> 1140647742 <span style="font-size: 0.85rem; font-weight: normal;">(Mandame un WhatsApp)</span>';
+                    } else if (tipo === 'in') {
+                        document.getElementById('btn-in').innerHTML = '<span>💼</span> <span style="font-size: 0.9rem; word-break: break-all;">linkedin.com/in/franco-canenstrari</span> <span style="font-size: 0.85rem; font-weight: normal;">(LinkedIn)</span>';
+                    }
+                }
+            </script>
         </section>
 
     </main>
